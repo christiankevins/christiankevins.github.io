@@ -342,6 +342,48 @@
         .research-item .paper-link:hover {
             background: #3dbd8f;
         }
+        
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
 
         /* Footer */
         footer {
@@ -604,13 +646,17 @@
                     <h3>SimpliAI - GPT Article Summarizer</h3>
                     <p>Built a responsive web application with React.js and Redux Toolkit, integrating OpenAI GPT-4 to generate accurate and concise article summaries from user-provided links.</p>
                     <div class="project-links">
-                        <a href="https://stunning-cannoli-b1d7b8.netlify.app/" target="_blank">🌐 Live Demo</a>
+                        <a href="https://stunning-cannoli-b1d7b8.netlify.app/" target="_blank">🌐 Website</a>
                         <a href="https://github.com/christiankevins/aigpt-summarizer" target="_blank">🔗 GitHub</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="https://raw.githubusercontent.com/christiankevins/flynext/main/screenshot.png" alt="FlyNext" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=FlyNext'">
+                    <div class="carousel">
+                        <img class="carousel-image" src="public/flynext1.png" alt="FlyNext" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=FlyNext'">
+                        <button class="carousel-btn carousel-prev">‹</button>
+                        <button class="carousel-btn carousel-next">›</button>
+                    </div>
                     <span class="project-badge">Best Project UofT Web Programming</span>
                     <h3>FlyNext</h3>
                     <p>Hotel and flight booking website with a functional backend using React and Prisma. Recognized as the best project in the UofT Web Programming course.</p>
@@ -638,9 +684,13 @@
                 </div>
 
                 <div class="project-card">
-                <img src="https://raw.githubusercontent.com/christiankevins/awshack/main/screenshot.png" alt="MeetUofT" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=MeetUofT'">
+                <img src="public/sorting.png" alt="MeetUofT" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=MeetUofT'">
                     <h3>Sorting Visualizer</h3>
                     <p>Developed an interactive Sorting Algorithm Visualizer using pygame, implementing various sorting algorithms with dynamic visualization to help understand algorithm behavior in real-time.</p>
+                    <div class="project-links">
+                        <a href="https://youtu.be/C_XJxU2_5I4" target="_blank">🌐 Live Demo</a>
+                        <a href="https://github.com/christiankevins/Sorting-Visualizer" target="_blank">🔗 GitHub</a>
+                    </div>
                 </div>
 
                 
@@ -679,6 +729,69 @@
                 }
             });
         });
+
+        // Carousel functionality for FlyNext project
+        const carousel = document.querySelector('.carousel');
+        if (carousel) {
+            const img = carousel.querySelector('.carousel-image');
+            const prevBtn = carousel.querySelector('.carousel-prev');
+            const nextBtn = carousel.querySelector('.carousel-next');
+            const images = ['flynext1.png', 'flynext2.png', 'flynext3.png', 'flynext4.png', 'flynext5.png', 'flynext6.png', 'flynext7.png'];
+            let currentIndex = 0;
+
+            function updateImage() {
+                img.src = `public/${images[currentIndex]}`;
+            }
+
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentIndex = (currentIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    updateImage();
+                } else if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    updateImage();
+                }
+            });
+
+            // Touch swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 50) {
+                    // Swipe left
+                    currentIndex = (currentIndex + 1) % images.length;
+                    updateImage();
+                }
+                if (touchEndX > touchStartX + 50) {
+                    // Swipe right
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    updateImage();
+                }
+            }
+        }
     </script>
 </body>
 </html>
