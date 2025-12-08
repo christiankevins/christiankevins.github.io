@@ -89,10 +89,9 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            z-index: 2;
-            animation: fadeInUp 0.8s ease;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
         .hero p {
