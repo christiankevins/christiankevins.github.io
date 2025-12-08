@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Kevin Sidharta - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1a1a2e;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4ecca3;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .hero .contact-links a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Education */
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .education-card h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .education-card ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .education-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #f0f4ff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #667eea;
+            border: 1px solid #667eea;
+        }
+
+        /* Experience */
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .experience-item h3 {
+            color: #1a1a2e;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .experience-item ul {
+            margin-left: 1.5rem;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-links a {
+            padding: 0.5rem 1rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .project-links a:hover {
+            background: #5568d3;
+        }
+
+        .project-badge {
+            display: inline-block;
+            background: #ffd93d;
+            color: #1a1a2e;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Research */
+        .research-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            border-left: 4px solid #4ecca3;
+        }
+
+        .research-item h3 {
+            color: #1a1a2e;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-item .institution {
+            color: #4ecca3;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-item .details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .research-item p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .research-item .paper-link {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: #4ecca3;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .research-item .paper-link:hover {
+            background: #3dbd8f;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>CKS</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Christian Kevin Sidharta</h1>
+            <p>Software Engineer | Computer Science & Commerce @ UofT</p>
+            <div class="contact-links">
+                <a href="tel:6478218981">📞 (647) 821-8981</a>
+                <a href="mailto:christian.kevin.04@gmail.com">✉️ Email</a>
+                <a href="https://github.com/christiankevins" target="_blank">🔗 GitHub</a>
+                <a href="https://linkedin.com/in/christian-kevin-sidharta" target="_blank">💼 LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-card">
+                <h3>University of Toronto</h3>
+                <div class="details">
+                    <span><strong>Computer Science and Commerce</strong></span>
+                    <span>September 2022 - May 2027</span>
+                </div>
+                <div class="details">
+                    <span><strong>cGPA: 3.84/4.0</strong></span>
+                    <span>Toronto, ON</span>
+                </div>
+                <ul>
+                    <li><strong>Scholarship:</strong> BIM full-ride scholarship worth $400,000 CAD, UTM Principal Award Scholar</li>
+                    <li><strong>Achievement:</strong> 3rd Place Rotman Commerce-BMO Financial Lab Datathon 2025, Finalist BCG HTGlobe 2024 & 2025</li>
+                    <li><strong>Teaching Assistant:</strong> Computer Organization</li>
+                    <li><strong>Relevant Courses:</strong> Databases, Web Programming, Neural Networks & Deep Learning, Computing with Natural Language, Computer Vision</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Assembly</span>
+                        <span class="skill-tag">Go</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">Kotlin</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Technologies & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">.NET Core</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Altera (Intel)</h3>
+                <div class="role">Software Engineer Intern</div>
+                <div class="details">
+                    <span>Toronto, ON</span>
+                    <span>May 2025 – May 2026</span>
+                </div>
+                <ul>
+                    <li>Optimized the C++ based Deep Learning Architecture Optimizer, improving execution speed and reducing FPGA resource utilization, allowing larger deep learning models to fit on Altera Agilex FPGAs</li>
+                    <li>Developed an automated interview scheduling and setup tool leveraging the Microsoft Graph API to integrate seamlessly with internal Outlook calendars, PDL records, Workday, and Microsoft Teams, reducing new-hire interview scheduling time by 50%</li>
+                    <li>Led the end-to-end development of a full-stack headcount tracking dashboard using Node.js and Django with LDAP integration, utilizing SQL and Python for data processing, and deploying via Docker and Kubernetes</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>University of Toronto</h3>
+                <div class="role">Research Assistant</div>
+                <div class="details">
+                    <span>Toronto, ON</span>
+                    <span>September 2024 – May 2025</span>
+                </div>
+                <ul>
+                    <li>Conducted research under Prof. Dennis Fernandes on "Enhancing Protein Biophysics Research with RAG"</li>
+                    <li>Co-developed a Retrieval-Augmented Generation (RAG) system to enhance protein large language models, integrating UniProt and peer-reviewed literature</li>
+                    <li>Designed and implemented data retrieval pipelines and embedding integration using LangChain, reducing manual review time for biophysicists by 50%</li>
+                    <li>Leveraged RAGAS as an evaluation framework to assess LLM outputs in protein modeling tasks</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Intel</h3>
+                <div class="role">Software Engineer Intern (TeamWork Global Program)</div>
+                <div class="details">
+                    <span>Remote</span>
+                    <span>June 2024 – August 2024</span>
+                </div>
+                <ul>
+                    <li>Chosen to represent the University of Toronto and collaborate with students from Cornell University, IIT Delhi, University of Warwick, and SJTU China in a global collaboration project</li>
+                    <li>Designed and implemented an industry-specific edge AI application for local deployment</li>
+                    <li>Optimized and tested Intel's OpenVINO toolkit to accelerate AI model performance</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Unity Health Toronto</h3>
+                <div class="role">Software Engineer Intern</div>
+                <div class="details">
+                    <span>Toronto, ON</span>
+                    <span>May 2024 - August 2024</span>
+                </div>
+                <ul>
+                    <li>Finetuned and tested different Large Language Models such as Llama and Cohere using Huggingface, improving accuracy in automated depression and PTSD screening</li>
+                    <li>Conducted performance analysis using Scikit-learn, assessing LLMs with statistical metrics such as Accuracy, F1 Score, MCC, and R-Squared</li>
+                    <li>Wrote a peer-reviewed paper based on project outcomes under the Keenan Program with Prof. Venka Bhat</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+        <section id="research">
+        <div class="container">
+            <h2>Research</h2>
+            
+            <div class="research-item">
+                <h3>Enhancing Protein Biophysics Research with RAG</h3>
+                <div class="institution">University of Toronto - Prof. Dennis Fernandes</div>
+                <div class="details">
+                    <span>Research Assistant</span>
+                    <span>September 2024 – May 2025</span>
+                </div>
+                <p>
+                    Conducted cutting-edge research on integrating Retrieval-Augmented Generation (RAG) systems with protein large language models to enhance protein biophysics research. Co-developed a comprehensive system that integrates UniProt databases and peer-reviewed literature, enabling researchers to access structural protein data and target validation more efficiently.
+                </p>
+                <p>
+                    Designed and implemented sophisticated data retrieval pipelines using LangChain, reducing manual review time for biophysicists by 50%. Leveraged RAGAS as an evaluation framework to rigorously assess LLM outputs in protein modeling tasks, ensuring high accuracy and reliability in computational biology applications.
+                </p>
+                <a href="https://drive.google.com/file/d/115oR5SSrdkefCTjF_qGwW4buzG-jiwxW/view" target="_blank" class="paper-link">📄 View Research Symposium Presentation</a>
+            </div>
+
+            <div class="research-item">
+                <h3>Automated Depression and PTSD Screening Using Large Language Models</h3>
+                <div class="institution">Unity Health Toronto - Prof. Venka Bhat (Keenan Program)</div>
+                <div class="details">
+                    <span>Software Engineer Intern</span>
+                    <span>May 2024 - August 2024</span>
+                </div>
+                <p>
+                    Led the development and evaluation of Large Language Models for automated mental health screening, focusing on depression and PTSD detection. Fine-tuned and tested multiple state-of-the-art models including Llama and Cohere using Huggingface, significantly improving accuracy in automated screening processes.
+                </p>
+                <p>
+                    Conducted comprehensive performance analysis using Scikit-learn with statistical metrics including Accuracy, F1 Score, Matthews Correlation Coefficient (MCC), and R-Squared to ensure clinical validity. The research culminated in a peer-reviewed publication in PLOS Digital Health, contributing to the advancement of AI-driven mental health assessment tools.
+                </p>
+                <a href="https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000943" target="_blank" class="paper-link">📄 Read Published Paper in PLOS Digital Health</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/christiankevins/ecorankai/main/screenshot.png" alt="EcoRankAI" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=EcoRankAI'">
+                    <h3>EcoRankAI - Sustainability Venture Capital AI</h3>
+                    <p>Developed a Python Streamlit-powered web application leveraging OpenAI GPT-3.5 Turbo to analyze and rank sustainability ventures for venture capital investment decisions.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/christiankevins/EcoRankAI" target="_blank">🔗 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/megz14/autocraft/main/screenshot.png" alt="AutoCraft" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=AutoCraft'">
+                    <h3>AutoCraft – Text to Minecraft Build Generation</h3>
+                    <p>Two-stage text-to-Minecraft system that generates a coarse 3D occupancy map using Point-E, then applies a text-conditioned discrete diffusion model to assign Minecraft block types.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/megz14/autocraft" target="_blank">🔗 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/christiankevins/aigpt-summarizer/main/screenshot.png" alt="SimpliAI" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=SimpliAI'">
+                    <h3>SimpliAI - GPT Article Summarizer</h3>
+                    <p>Built a responsive web application with React.js and Redux Toolkit, integrating OpenAI GPT-4 to generate accurate and concise article summaries from user-provided links.</p>
+                    <div class="project-links">
+                        <a href="https://stunning-cannoli-b1d7b8.netlify.app/" target="_blank">🌐 Live Demo</a>
+                        <a href="https://github.com/christiankevins/aigpt-summarizer" target="_blank">🔗 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/christiankevins/flynext/main/screenshot.png" alt="FlyNext" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=FlyNext'">
+                    <span class="project-badge">Best Project UofT Web Programming</span>
+                    <h3>FlyNext</h3>
+                    <p>Hotel and flight booking website with a functional backend using React and Prisma. Recognized as the best project in the UofT Web Programming course.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/christiankevins/flynext" target="_blank">🔗 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/christiankevins/awshack/main/screenshot.png" alt="MeetUofT" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=MeetUofT'">
+                    <h3>MeetUofT</h3>
+                    <p>AWS Hackathon project enabling students to connect and network within the University of Toronto community through an innovative matching platform.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/christiankevins/awshack" target="_blank">🔗 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/667eea/ffffff?text=Fake+Job+Detector" alt="Fake Job Posting Detector">
+                    <h3>Fake Job Posting Detector</h3>
+                    <p>Used multiple machine learning models including Naive Bayes, Logistic Regression, and RNN to classify and detect fraudulent job postings.</p>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/667eea/ffffff?text=Sorting+Visualizer" alt="Sorting Visualizer">
+                    <h3>Sorting Visualizer</h3>
+                    <p>Developed an interactive Sorting Algorithm Visualizer using pygame, implementing various sorting algorithms with dynamic visualization to help understand algorithm behavior in real-time.</p>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/667eea/ffffff?text=Sokoban" alt="Sokoban Game">
+                    <h3>Sokoban Game</h3>
+                    <p>Built a fully functional Sokoban puzzle game in Assembly language, implementing player movement, collision detection, and crate-pushing logic with low-level programming techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Christian Kevin Sidharta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
