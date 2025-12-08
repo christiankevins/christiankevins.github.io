@@ -28,6 +28,7 @@
         </video>
         <div class="container">
             <h1>Christian Kevin Sidharta</h1>
+            <p id="typing-text" class="typing-text"></p>
             <p>Software Engineer | Computer Science & Commerce @ UofT</p>
             <div class="contact-links">
                 <a href="https://github.com/christiankevins" target="_blank">🔗 GitHub</a>
@@ -398,6 +399,41 @@
                 }
             }
         }
+
+    const messages = ["Hi There!", "Welcome!", "Nice to Meet You :)"];
+    const typingSpeed = 100; // ms per character
+    const erasingSpeed = 50; // ms per character
+    const delayBetween = 1500; // delay before typing next message
+
+    let msgIndex = 0;
+    let charIndex = 0;
+    const typingText = document.getElementById("typing-text");
+
+    function type() {
+    if (charIndex < messages[msgIndex].length) {
+        typingText.textContent += messages[msgIndex][charIndex];
+        charIndex++;
+        setTimeout(type, typingSpeed);
+    } else {
+        setTimeout(erase, delayBetween);
+    }
+    }
+
+    function erase() {
+    if (charIndex > 0) {
+        typingText.textContent = messages[msgIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingSpeed);
+    } else {
+        msgIndex = (msgIndex + 1) % messages.length;
+        setTimeout(type, typingSpeed);
+    }
+    }
+
+    // Start typing
+    document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(type, 1000);
+    });
     </script>
 </body>
 </html>

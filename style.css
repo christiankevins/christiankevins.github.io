@@ -4,6 +4,12 @@
             padding: 0;
             box-sizing: border-box;
         }
+        .typing-text {
+            font-size: 4rem;
+            color: #ffffff;
+            margin: 0.5rem 0;
+            min-height: 2rem; /* reserve space for typing */
+        }
 
             
         body {
