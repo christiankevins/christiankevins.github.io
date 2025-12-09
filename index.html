@@ -22,7 +22,7 @@
     </nav>
 
     <section class="hero">
-        <video autoplay muted loop playsinline class="hero-video">
+        <video autoplay muted loop playsinline preload="none" class="hero-video">
         <source src="public/background2.mp4" type="video/mp4">
         Your browser does not support the video tag.
         </video>
@@ -232,12 +232,15 @@
     <section id="projects">
         <div class="container">
             <h2>Projects</h2>
-            <div class="projects-grid">
+
+            
+                
                 <div class="project-card">
-                    <img src="https://raw.githubusercontent.com/christiankevins/ecorankai/main/screenshot.png" alt="EcoRankAI" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=EcoRankAI'">
-                    <h3>EcoRankAI - Sustainability Venture Capital AI</h3>
-                    <p>Developed a Python Streamlit-powered web application leveraging OpenAI GPT-3.5 Turbo to analyze and rank sustainability ventures for venture capital investment decisions.</p>
+                <img src="https://raw.githubusercontent.com/christiankevins/awshack/main/screenshot.png" alt="MeetUofT" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=MeetUofT'">
+                    <h3>Food Classifier</h3>
+                    <p>Predicting individual food preferences (Pizza, Shawarma, or Sushi), based on CSC311 students survey responses. The combination of bag-of-words encoding and normalization was applied across algorithms, such as k-NN, Logistic Regression, Random Forest, Neural Network, and Gradient Boosting. We showed that Gradient Boosting model achieved the most balanced result with over 93% training accuracy and 87% validation accuracy on unseen data. </p>
                 </div>
+
 
                 <div class="project-card">
                     <img src="public/autocraft.png" alt="AutoCraft" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=AutoCraft'">
@@ -300,12 +303,13 @@
                     </div>
                 </div>
 
-                
+                <div class="projects-grid">
                 <div class="project-card">
-                <img src="https://raw.githubusercontent.com/christiankevins/awshack/main/screenshot.png" alt="MeetUofT" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=MeetUofT'">
-                    <h3>Food Classifier</h3>
-                    <p>Predicting individual food preferences (Pizza, Shawarma, or Sushi), based on CSC311 students survey responses. The combination of bag-of-words encoding and normalization was applied across algorithms, such as k-NN, Logistic Regression, Random Forest, Neural Network, and Gradient Boosting. We showed that Gradient Boosting model achieved the most balanced result with over 93% training accuracy and 87% validation accuracy on unseen data. </p>
+                    <img src="https://raw.githubusercontent.com/christiankevins/ecorankai/main/screenshot.png" alt="EcoRankAI" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=EcoRankAI'">
+                    <h3>EcoRankAI - Sustainability Venture Capital AI</h3>
+                    <p>Developed a Python Streamlit-powered web application leveraging OpenAI GPT-3.5 Turbo to analyze and rank sustainability ventures for venture capital investment decisions.</p>
                 </div>
+
                 <div class="project-card">
                 <img src="public/sokoban.png" alt="Sokoban Game" onerror="this.src='https://via.placeholder.com/400x200/667eea/ffffff?text=MeetUofT'">
                     <h3>Sokoban Game</h3>
