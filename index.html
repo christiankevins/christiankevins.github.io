@@ -27,8 +27,7 @@
         Your browser does not support the video tag.
         </video>
         <div class="container">
-            <h1>Christian Kevin Sidharta</h1>
-            <p id="typing-text" class="typing-text"></p>
+            <h1 id="typing-text" class="typing-text"></h1>
             <p>Software Engineer @ Altera (Intel) | Computer Science @ UofT | Incoming @ Google</p>
             <div class="contact-links">
                 <a href="https://github.com/christiankevins" target="_blank">🔗 GitHub</a>
@@ -107,97 +106,101 @@
     <section id="experience">
         <div class="container">
             <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Google</h3>
-                <div class="role">Software Engineer Intern</div>
-                <div class="details">
-                    <span>Waterloo, ON</span>
-                    <span>June 2026 – September 2026</span>
+            <div class="experience-carousel">
+                <button class="exp-btn exp-prev" aria-label="Previous">&#8249;</button>
+                <div class="experience-track">
+                    <div class="experience-item">
+                        <h3>Google</h3>
+                        <div class="role">Software Engineer Intern</div>
+                        <div class="details">
+                            <span>Waterloo, ON</span>
+                            <span>June 2026 – September 2026</span>
+                        </div>
+                        <ul>
+                            <li>Incoming, GMail iOS</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Altera (Intel)</h3>
+                        <div class="role">Software Engineer Intern</div>
+                        <div class="details">
+                            <span>Toronto, ON</span>
+                            <span>May 2025 – June 2026</span>
+                        </div>
+                        <ul>
+                            <li>Optimized the C++ based Deep Learning Architecture Optimizer, improving execution speed and reducing FPGA resource utilization, allowing larger deep learning models to fit on Altera Agilex FPGAs</li>
+                            <li>Developed an automated interview scheduling and setup tool leveraging the Microsoft Graph API to integrate seamlessly with internal Outlook calendars, PDL records, Workday, and Microsoft Teams, reducing new-hire interview scheduling time by 50%</li>
+                            <li>Led the end-to-end development of a full-stack headcount tracking dashboard using Node.js and Django with LDAP integration, utilizing SQL and Python for data processing, and deploying via Docker and Kubernetes</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h3>University of Toronto</h3>
+                        <div class="role">Research Assistant</div>
+                        <div class="details">
+                            <span>Toronto, ON</span>
+                            <span>September 2024 – May 2025</span>
+                        </div>
+                        <ul>
+                            <li>Conducted research under Prof. Dennis Fernandes on "Enhancing Protein Biophysics Research with RAG"</li>
+                            <li>Co-developed a Retrieval-Augmented Generation (RAG) system to enhance protein large language models, integrating UniProt and peer-reviewed literature</li>
+                            <li>Designed and implemented data retrieval pipelines and embedding integration using LangChain, reducing manual review time for biophysicists by 50%</li>
+                            <li>Leveraged RAGAS as an evaluation framework to assess LLM outputs in protein modeling tasks</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Intel</h3>
+                        <div class="role">Software Engineer Intern (TeamWork Global Program)</div>
+                        <div class="details">
+                            <span>Remote</span>
+                            <span>June 2024 – August 2024</span>
+                        </div>
+                        <ul>
+                            <li>Chosen to represent the University of Toronto and collaborate with students from Cornell University, IIT Delhi, University of Warwick, and SJTU China in a global collaboration project</li>
+                            <li>Designed and implemented an industry-specific edge AI application for local deployment</li>
+                            <li>Optimized and tested Intel's OpenVINO toolkit to accelerate AI model performance</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Unity Health Toronto</h3>
+                        <div class="role">Software Engineer Intern</div>
+                        <div class="details">
+                            <span>Toronto, ON</span>
+                            <span>May 2024 - August 2024</span>
+                        </div>
+                        <ul>
+                            <li>Finetuned and tested different Large Language Models such as Llama and Cohere using Huggingface, improving accuracy in automated depression and PTSD screening</li>
+                            <li>Conducted performance analysis using Scikit-learn, assessing LLMs with statistical metrics such as Accuracy, F1 Score, MCC, and R-Squared</li>
+                            <li>Wrote a peer-reviewed paper based on project outcomes under the Keenan Program with Prof. Venka Bhat</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h3>OpenPinnas</h3>
+                        <div class="role">Technical Team Member</div>
+                        <div class="details">
+                            <span>Toronto, ON</span>
+                            <span>2024</span>
+                        </div>
+                        <ul>
+                            <li>Developed website for a startup</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h3>ID/X Partners</h3>
+                        <div class="role">Software Engineer Intern</div>
+                        <div class="details">
+                            <span>Remote</span>
+                            <span>June 2023 – August 2023</span>
+                        </div>
+                        <ul>
+                            <li>Developed a high-throughput market data API for RobotData, leveraging Python and PostgreSQL for scalable data retrieval, and integrated with Microsoft Azure to generate automated usage and performance reports</li>
+                            <li>Improved system stability by 30% through testing, root cause analysis, and performance tuning in data pipelines</li>
+                            <li>Accelerated engineers onboarding by creating API documentation, architecture diagrams, and tutorial videos</li>
+                        </ul>
+                    </div>
                 </div>
-                <ul>
-                    <li>Incoming, GMail iOS</li>
-                </ul>
+                <button class="exp-btn exp-next" aria-label="Next">&#8250;</button>
             </div>
-            <div class="experience-item">
-                <h3>Altera (Intel)</h3>
-                <div class="role">Software Engineer Intern</div>
-                <div class="details">
-                    <span>Toronto, ON</span>
-                    <span>May 2025 – June 2026</span>
-                </div>
-                <ul>
-                    <li>Optimized the C++ based Deep Learning Architecture Optimizer, improving execution speed and reducing FPGA resource utilization, allowing larger deep learning models to fit on Altera Agilex FPGAs</li>
-                    <li>Developed an automated interview scheduling and setup tool leveraging the Microsoft Graph API to integrate seamlessly with internal Outlook calendars, PDL records, Workday, and Microsoft Teams, reducing new-hire interview scheduling time by 50%</li>
-                    <li>Led the end-to-end development of a full-stack headcount tracking dashboard using Node.js and Django with LDAP integration, utilizing SQL and Python for data processing, and deploying via Docker and Kubernetes</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h3>University of Toronto</h3>
-                <div class="role">Research Assistant</div>
-                <div class="details">
-                    <span>Toronto, ON</span>
-                    <span>September 2024 – May 2025</span>
-                </div>
-                <ul>
-                    <li>Conducted research under Prof. Dennis Fernandes on "Enhancing Protein Biophysics Research with RAG"</li>
-                    <li>Co-developed a Retrieval-Augmented Generation (RAG) system to enhance protein large language models, integrating UniProt and peer-reviewed literature</li>
-                    <li>Designed and implemented data retrieval pipelines and embedding integration using LangChain, reducing manual review time for biophysicists by 50%</li>
-                    <li>Leveraged RAGAS as an evaluation framework to assess LLM outputs in protein modeling tasks</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h3>Intel</h3>
-                <div class="role">Software Engineer Intern (TeamWork Global Program)</div>
-                <div class="details">
-                    <span>Remote</span>
-                    <span>June 2024 – August 2024</span>
-                </div>
-                <ul>
-                    <li>Chosen to represent the University of Toronto and collaborate with students from Cornell University, IIT Delhi, University of Warwick, and SJTU China in a global collaboration project</li>
-                    <li>Designed and implemented an industry-specific edge AI application for local deployment</li>
-                    <li>Optimized and tested Intel's OpenVINO toolkit to accelerate AI model performance</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h3>Unity Health Toronto</h3>
-                <div class="role">Software Engineer Intern</div>
-                <div class="details">
-                    <span>Toronto, ON</span>
-                    <span>May 2024 - August 2024</span>
-                </div>
-                <ul>
-                    <li>Finetuned and tested different Large Language Models such as Llama and Cohere using Huggingface, improving accuracy in automated depression and PTSD screening</li>
-                    <li>Conducted performance analysis using Scikit-learn, assessing LLMs with statistical metrics such as Accuracy, F1 Score, MCC, and R-Squared</li>
-                    <li>Wrote a peer-reviewed paper based on project outcomes under the Keenan Program with Prof. Venka Bhat</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>OpenPinnas</h3>
-                <div class="role">Technical Team Member</div>
-                <div class="details">
-                    <span>Toronto, ON</span>
-                    <span>2024</span>
-                </div>
-                <ul>
-                    <li>Developed website for a startup</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>ID/X Partners</h3>
-                <div class="role">Software Engineer Intern</div>
-                <div class="details">
-                    <span>Remote</span>
-                    <span>June 2023 – August 2023</span>
-                </div>
-                <ul>
-                    <li>Developed a high-throughput market data API for RobotData, leveraging Python and PostgreSQL for scalable data retrieval, and integrated with Microsoft Azure to generate automated usage and performance reports</li>
-                    <li>Improved system stability by 30% through testing, root cause analysis, and performance tuning in data pipelines</li>
-                    <li>Accelerated engineers onboarding by creating API documentation, architecture diagrams, and tutorial videos</li>
-                </ul>
-            </div>
+            <div class="exp-dots"></div>
         </div>
     </section>
 
@@ -289,7 +292,7 @@
         </div>
     </section>
 
-            <section id="research">
+    <section id="research">
         <div class="container">
             <h2>Research</h2>
             
@@ -412,7 +415,7 @@
             }
         }
 
-    const messages = ["Hi There!", "Welcome!", "Nice to Meet You :)"];
+    const messages = ["\u00A0Hi There! My name is Christian", "\u00A0Welcome!", "\u00A0Nice to Meet You :)"];
     const typingSpeed = 100; // ms per character
     const erasingSpeed = 50; // ms per character
     const delayBetween = 1500; // delay before typing next message
@@ -432,7 +435,7 @@
     }
 
     function erase() {
-    if (charIndex > 0) {
+    if (charIndex > 1) {
         typingText.textContent = messages[msgIndex].substring(0, charIndex - 1);
         charIndex--;
         setTimeout(erase, erasingSpeed);
@@ -446,6 +449,54 @@
     document.addEventListener("DOMContentLoaded", () => {
     setTimeout(type, 1000);
     });
+
+    // Experience carousel
+    (function () {
+        const items = document.querySelectorAll('#experience .experience-item');
+        const dotsContainer = document.querySelector('.exp-dots');
+        const prevBtn = document.querySelector('.exp-prev');
+        const nextBtn = document.querySelector('.exp-next');
+        let current = 0;
+
+        // Build dots
+        items.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'exp-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Go to experience ' + (i + 1));
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        function goTo(index) {
+            items[current].classList.remove('active');
+            dotsContainer.children[current].classList.remove('active');
+            current = (index + items.length) % items.length;
+            items[current].classList.add('active');
+            dotsContainer.children[current].classList.add('active');
+        }
+
+        // Init first card
+        items[0].classList.add('active');
+
+        prevBtn.addEventListener('click', () => goTo(current - 1));
+        nextBtn.addEventListener('click', () => goTo(current + 1));
+
+        // Auto-rotate every 5s, pause on hover
+        let timer = setInterval(() => goTo(current + 1), 5000);
+        const carousel = document.querySelector('.experience-carousel');
+        carousel.addEventListener('mouseenter', () => clearInterval(timer));
+        carousel.addEventListener('mouseleave', () => {
+            timer = setInterval(() => goTo(current + 1), 5000);
+        });
+
+        // Touch swipe
+        let touchStartX = 0;
+        carousel.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
+        carousel.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+        });
+    })();
     </script>
 </body>
 </html>
